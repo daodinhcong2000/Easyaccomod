@@ -14,12 +14,24 @@ module.exports.updateFillRoom = async function(req , res){
     var sql = "SELECT amount FROM room WHERE room_id = ? "
     var resualts = await query(conn , sql , [req.body.room_id]);
     if (parseInt(req.body.fill) > parseInt(resualts[0].amount)){
-        console.log(1);
-        res.status(404).end();
+        //console.log(1);
+        res.send({
+            err : 'Cập nhập trạng thái phòng trọ thất bại' 
+        }).end();
         return;
     }
     sql = "UPDATE room SET fill = ? WHERE room_id = ? "
-    await query(conn, sql , [req.body.fill , req.body.room_id]);
+    await query(conn, sql , [req.body.fill , req.body.room_id]).catch(console.log);
+    sql = "SELECT COUNT(*) total FROM notification WHERE room_id = ?"
+    resualts = await query(conn, sql , [req.body.room_id]);
+    if (resualts[0].total == 0 ){
+        sql = "INSERT INTO notification (room_id, create_date) VALUES (?, CURRENT_DATE() )";
+        await query(conn, sql , [req.body.room_id]).catch(console.log);
+    }
+    else{
+        sql = "UPDATE notification SET create_date = CURRENT_DATE() , status = 'Chưa xem' WHERE room_id = ? "
+        await query(conn, sql , [req.body.room_id]).catch(console.log);
+    }
     conn.end();
     res.send({
         data: "Cập nhật trạng thái phòng trọ thành công"

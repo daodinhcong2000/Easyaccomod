@@ -1,66 +1,42 @@
 function showPost(){
 	fetch("http://localhost:3001/admin/getRooms")
 	  .then(
-		function(response) {
-		  if (response.status !== 200) {
-			console.log('Lỗi, mã lỗi ' + response.status);
-			return;
-		  }
-		  // parse response data
-		  response.json().then(data => {
-              var i = 0;
-             // console.log(data);
-              for(i in data){     //Thêm dữ liệu vào bảng port
-                  var xmlhttps = `<tr>
-                                    <td >`+ data[i].room_id +`</td>
-                                    <td>`+ data[i].roomName +`</td>
-                                    <td>`+ data[i].fullName +`</td>
-                                    <td>`+ data[i].create_date +`</td>`;
-
-            if(data[i].confirm_status == "0"){ //Dữ liệu thêm vào bảng duyệt
-                xmlhttps += `<td>Chưa duyệt</td>
-                            <td>
-                                <button type="button"  value = "`+ data[i].room_id +`" onclick="isConfirm(this)">Có</button>
-                                <button type="button"  value = "`+ data[i].room_id +`" onclick="isNotConfirm(this)">Không</button>
-                            </td>
-                        </tr>`;
-                $(".card-content-wait tbody").append(xmlhttps);  
-            }
-            else{
-                //Dữ liệu thêm vào bảng đã duyệt
-                xmlhttps += `<td>Đã duyệt</td>
-                            </tr>`;
-               // console.log(xmlhttps);
-                $(".card-content-acept tbody").append(xmlhttps); 
-                if(data[i].time_life_status == "0"){
-                      var dataWaitTime = `<tr>
-                                            <td>`+ data[i].room_id +`</td>
-                                            <td>`+ data[i].roomName +`</td>
-                                            <td>`+ data[i].fullName +`</td>
-                                            <td>`+ data[i].create_date +`</td>
-                                            <td>
-                                              <input type="number">
-                                              <select>
-                                                <option value="date">ngày</option>
-                                                <option value="week">tuần</option>
-                                                <option value="month">tháng</option>
-                                                <option value="year">năm</option>
-                                                </select>
-                                            </td>
-                                            <td>
-                                              <button type="button" onclick="isMoreTime(this)" value = "`+ data[i].room_id +` ">Có</button>
-                                              <button type="button" onclick="isNotMoreTime(this)" value = "`+ data[i].room_id +`">Không</button>
-                                            </td>
-                                          </tr>`;
-                    $(".card-content-wait-time tbody").append(dataWaitTime);
-                }
-            }
-                         
-              }
-          })
+      function(response) {
+        if (response.status !== 200) {
+        console.log('Lỗi, mã lỗi ' + response.status);
+        return;
         }
-      )
-     console.log(document.querySelector(".register"));
+        // parse response data
+        response.json().then(data => {
+            var i = 0;
+            // console.log(data);
+            for(i in data){     //Thêm dữ liệu vào bảng port
+                var xmlhttps = `<tr>
+                                  <td >`+ data[i].room_id +`</td>
+                                  <td>`+ data[i].roomName +`</td>
+                                  <td>`+ data[i].fullName +`</td>
+                                  <td>`+ data[i].create_date +`</td>`;
+
+              if(data[i].confirm_status == "0"){ //Dữ liệu thêm vào bảng duyệt
+                  xmlhttps += `<td>Chưa duyệt</td>
+                              <td>
+                                  <button type="button"  value = "`+ data[i].room_id +`" onclick="isConfirm(this)">Có</button>
+                                  <button type="button"  value = "`+ data[i].room_id +`" onclick="isNotConfirm(this)">Không</button>
+                              </td>
+                          </tr>`;
+                  $(".card-content-wait tbody").append(xmlhttps);  
+                }
+                else{
+                    //Dữ liệu thêm vào bảng đã duyệt
+                    xmlhttps += `<td>Đã duyệt</td>
+                                </tr>`;
+                  // console.log(xmlhttps);
+                    $(".card-content-acept tbody").append(xmlhttps); 
+                    }
+            }
+        })
+    });
+    // console.log(document.querySelector(".register"));
     };
 showPost();
 
@@ -112,18 +88,23 @@ function isNotConfirm(ok){
     
 }
 
-function isMoreTime(value){
-    var amount = value.parentNode.parentNode.childNodes[9].childNodes[1].value;
-    var cycle =  value.parentNode.parentNode.childNodes[9].childNodes[3].value;
-    var room_id = value.value;
+function createRoom(){
 
-    const data = { 
-      room_id : room_id,
-      amount : amount,
-      cycle : cycle,
-      time_life_status: "1"
-    };
-
-    console.log(JSON.stringify(data));
-
+  var address = document.querySelector('input[name=address]').value;
+  var house_number = document.querySelector('input[name=house_number]').value;
+  var street = document.querySelector('input[name=street]').value;
+  var town = document.querySelector('input[name=town]').value;
+  var city = document.querySelector('input[name=city]').value;
+  var public_places = document.querySelector('input[name=public_places]').value;
+  var amount = document.querySelector('input[name=amount]').value;
+  var cost_room = document.querySelector('input[name=cost_room]').value;
+  var acreage = document.querySelector('input[name=acreage]').value;
+  var address = document.querySelector('input[name=address]').value;
+  var address = document.querySelector('input[name=address]').value;
+  var address = document.querySelector('input[name=address]').value;
+  var address = document.querySelector('input[name=address]').value;
+  var address = document.querySelector('input[name=address]').value;
+  var address = document.querySelector('input[name=address]').value;
+  var address = document.querySelector('input[name=address]').value;
+  var address = document.querySelector('input[name=address]').value;
 }

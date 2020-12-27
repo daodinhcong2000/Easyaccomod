@@ -51,11 +51,13 @@ function switchTheme() {
 }
 
 function collapseSidebar() {
+	console.log("abc");
 	body.classList.toggle('sidebar-expand')
 	
 }
 
 window.onclick = function(event) {
+	
 	openCloseDropdown(event)
 }
 
@@ -65,14 +67,17 @@ function closeAllDropdown() {
 	for (var i = 0; i < dropdowns.length; i++) {
 		dropdowns[i].classList.remove('dropdown-expand')
 	}
+	
 }
 
 function openCloseDropdown(event) {
+	
 	if (!event.target.matches('.dropdown-toggle')) {
 		// 
 		// đóng dropdown khi click out  dropdown menu
 		// 
 		closeAllDropdown()
+		
 	} else {
 		var toggle = event.target.dataset.toggle
 		var content = document.getElementById(toggle)
@@ -83,11 +88,13 @@ function openCloseDropdown(event) {
 			content.classList.add('dropdown-expand')
 		}
 	}
+
+	console.log("abc");
 }
 
 
 function showNotifies(){
-	fetch("/db/db_nofi.txt")
+	fetch("http://localhost:3001/admin/getNotification")
 	  .then(
 		function(response) {
 		  if (response.status !== 200) {
@@ -97,45 +104,50 @@ function showNotifies(){
 		  // parse response data
 		  response.json().then(data => {
 			var i = 0;
-			var countNofi = 0;
+			var countNofi = data;
 			for(i in data){
-			  var xmlhttps = `<li class="dropdown-menu-item read`+ data[i].view + `" >
+				var status = `Đã cho thuê :` + $(data[i].fill) +'/' + $(data[i].amount)
+				if(data[i].fill == 0) {
+					status = `Chưa cho thuê :`
+				}
+			  var xmlhttps = `<li class="dropdown-menu-item`+ data[i].view + `" >
 							  <a href="#" class="dropdown-menu-link ">
 								<div>
-								  <i class="far fa-dot-circle"></i>
-								  <br>
-								  <p>` + data[i].nameUser + `</p>
+								  <p> ` + data[i].fullname + `</p>
 								</div>
 								<span>
-								` + data[i].text + `
+								` + status + data[i].roomName + `
 								  <br>
 								  <span>
-								  ` + data[i].date + `
+								  ` + data[i].create_date + `
 								  </span>
 								</span>
 							  </a>
 							</li>`;
 			
-			 
-			 // document.querySelector("#notification-menu .dropdown-menu-content").innerHTML = xmlhttps;
-			 if(data[i].view == "0"){
-				countNofi += 1;
-				$("#notification-menu .dropdown-menu-content").append(xmlhttps);
-			  //console.log(document.querySelector("#notification-menu .dropdown-menu-content .0").style.backgroundColor = "red")
-			}
-			else{
 				$("#notification-menu .dropdown-menu-content").append(xmlhttps);
 			}
+		// 	 // document.querySelector("#notification-menu .dropdown-menu-content").innerHTML = xmlhttps;
+		// 	 if(data[i].view == "0"){
+		// 		countNofi += 1;
+		// 		$("#notification-menu .dropdown-menu-content").append(xmlhttps);
+		// 	  //console.log(document.querySelector("#notification-menu .dropdown-menu-content .0").style.backgroundColor = "red")
+		// 	}
+		// 	else{
+		// 		$("#notification-menu .dropdown-menu-content").append(xmlhttps);
+		// 	}
+		// }
+		// 	//document.querySelector("#notification-menu .dropdown-menu-content .read0").style.backgroundColor = "#eee";
+		// 	//console.log(document.querySelector("#notification-menu .dropdown-menu-content"));
+		//console.log(data.length );
+		if(data.length != 0){
+			document.querySelector(".dropdown .nav-link ").innerHTML = `<i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>
+																				<span class="navbar-badge">${data.length}</span>`;
 		}
-			//document.querySelector("#notification-menu .dropdown-menu-content .read0").style.backgroundColor = "#eee";
-			//console.log(document.querySelector("#notification-menu .dropdown-menu-content"));
-			if(countNofi != 0){
-				document.querySelector(".dropdown .nav-link ").innerHTML = `<i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>
-																					<span class="navbar-badge">${countNofi}</span>`;
-			}
 			else{
-				document.querySelector(".dropdown .nav-link ").innerHTML = `<i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>`
-			}
+				document.querySelector(".dropdown .nav-link ").innerHTML = `<i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>`;
+				$("#notification-menu .dropdown-menu-footer").html(`<p style="text-align:center; font-size: 1rem; font-weight: bold;" >Bạn không có thông báo nào</p>`) ;
+		}
 		  })
 		}
 	  )
@@ -146,10 +158,25 @@ showNotifies();
 
 
 
-function testAPI(){
-	fetch('http://localhost:3001/admin/getLandlord')
-  		.then(response => console.log(response))
-  		//.then(data => console.log(data));
+function viewAllNoties(){
+	fetch('http://localhost:3001/admin/readAllNotification', {
+		method: 'PUT', // or 'PUT'
+		headers: {
+			'Content-Type': 'application/json',
+		}})
+		.then(response => response.json())
+		.then(data => {
+			if(data.data = "Thành Công"){
+				document.querySelector(".dropdown-menu-content").remove();
+				document.querySelector(".dropdown .nav-link ").innerHTML = `<i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>`;
+			}
+		console.log('Success:', data);
+		})
+		.catch((error) => {
+		console.error('Error:', error);
+		});
 }
-  
-//testAPI();
+
+
+
+

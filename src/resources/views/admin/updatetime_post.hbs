@@ -134,7 +134,7 @@
 				</a>
 			</li>
 			<li class="sidebar-nav-item">
-				<a href="Chart.hbs" class="sidebar-nav-link">
+				<a href="http://localhost:3001/admin/manageChart" class="sidebar-nav-link">
 					<div>
 						<i class="fab fa-accusoft"></i>
 					</div>
@@ -150,7 +150,7 @@
 				</a>
 			</li>
 			<li  class="sidebar-nav-item">
-				<a href="http://localhost:3001/admin/manageRoom" class="sidebar-nav-link active">
+				<a href="http://localhost:3001/admin/manageRoom" class="sidebar-nav-link ">
 					<div>
 						<i class="fas fa-spinner"></i>
 					</div>
@@ -158,7 +158,7 @@
 				</a>
 			</li>
 			<li  class="sidebar-nav-item">
-				<a href="http://localhost:3001/admin/manageExtend" class="sidebar-nav-link">
+				<a href="http://localhost:3001/admin/manageExtend" class="sidebar-nav-link active">
 					<div>
 						<i class="fas fa-check-circle"></i>
 					</div>
@@ -188,6 +188,7 @@
 									<th>Tên phòng trọ</th>
 									<th>Người tạo</th>
 									<th>Thời gian tạo</th>
+									<th>Giá đăng bài</th>
 									<th>Thời gian gia hạn</th>
 									<th>gia hạn</th>
 								</tr>
@@ -198,18 +199,11 @@
 									<td>React</td>
 									<td>Tran Anh Tuat</td>
 									<td>17/07/2020</td>
+									<td>7000$</td>
+									<td>7 ngày</td>
 									<td>
-										<input type="number">
-										<select>
-											<option value="date">ngày</option>
-											<option value="week">tuần</option>
-											<option value="month">tháng</option>
-											<option value="year">năm</option>
-										  </select>
-									</td>
-									<td>
-										<button type="button" onclick="isMoreTime(this)">Có</button>
-										<button type="button" onclick="isNotMoreTime(this)">Không</button>
+										<button type="button" onclick="isMoreTime(this)" value="1">Có</button>
+										<button type="button" onclick="isNotMoreTime(this)" value="1" >Không</button>
 									</td>
 								</tr>
 								
@@ -225,7 +219,7 @@
 	<script src = "/js/jquery-3.5.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 	<script src="/js/index.js"></script>
-	<script src="/js/manage_post.js"></script>
+	<script src="/js/updateTime.js"></script>
 	<!-- end import script -->
 </body>
 </html>

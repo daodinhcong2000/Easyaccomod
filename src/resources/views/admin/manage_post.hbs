@@ -10,9 +10,17 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
 	<link rel="stylesheet" type="text/css" href="/fontawesome-free/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<!-- LINEARICONS -->
+	{{!-- <link rel="stylesheet" href="/fonts/linearicons/style.css"> --}}
+
+	<!-- MATERIAL DESIGN ICONIC FONT -->
+	{{!-- <link rel="stylesheet" href="/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css"> --}}
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<!-- STYLE CSS -->
+	<link rel="stylesheet" href="/css/style_input.css">
 	<!-- End import lib -->
 
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	
 </head>
 <body class="overlay-scrollbar">
 	<!-- navbar -->
@@ -133,7 +141,7 @@
 				</a>
 			</li>
 			<li class="sidebar-nav-item">
-				<a href="Chart.hbs" class="sidebar-nav-link">
+				<a href="http://localhost:3001/admin/manageChart" class="sidebar-nav-link">
 					<div>
 						<i class="fab fa-accusoft"></i>
 					</div>
@@ -241,210 +249,174 @@
 		</div>
 	</div>
 
-	<section class="wrapper register">
-    <div class="container">
-        <div>
-            <form action="/landlord/createRoom/store" method="POST" name="createRoom"enctype="multipart/form-data"  >
-                <div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div>
-                                <input name="address" type="text" placeholder="Điền địa chỉ">
-                            </div>
-                        </div>
+	<div class="wrapper">
+			<div class="inner">
+				<form form action="/admin/createRoom/store" method="POST" name="createRoom"enctype="multipart/form-data" >
+					<h3>Create a Room</h3>
+					<div class="form-row">
+						<div class="form-wrapper">
+							<label for="">Địa Chỉ *</label>
+							<input name="address" class="form-control" type="text" placeholder="Điền địa chỉ">
+						</div>
+						<div class="form-wrapper">
+							<label for="">Số nhà *</label>
+							<input type="text" name="house_number" class="form-control" placeholder="Điền số nhà">
+						</div>
 
-                        <div class="col-md-4">
-                            <div>
-                                <input name="house_number" type="text" placeholder="Điền số nhà">
-                            </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">Tên đường*</label>
+							<input type="text" name="street" class="form-control" placeholder="Điền phố">
+						</div>
 
-                        <div class="col-md-4">
-                            <div>
-                                <input name="street" type="text" placeholder="Điền tên phố">
-                            </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">Xã/Phường *</label>
+							<input type="text" name="town" class="form-control" placeholder="Điền Xã">
+						</div>
 
-                        <div class="col-md-4">
-                            <div>
-                                <input name="town" type="text" placeholder="Điền xã">
-                            </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">Quận/Huyện *</label>
+							<input class="form-control" name="district" type="text" placeholder="Điền quận/huyện">
+						</div>
 
-                        <div class="col-md-4">
-                            <div>
-                                <input name="district" type="text" placeholder="Điền quận/huyện">
-                            </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">Tỉnh/Thành Phố *</label>
+							<input class="form-control"  name="city" type="text" placeholder="Điền tỉnh/thành phố">
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-wrapper">
+							<label for="">Địa điểm công cộng *</label>
+							<input class="form-control"  name="public_places" type="text" placeholder="Điền địa điểm công cộng gần phòng">
+						</div>
 
-                        <div class="col-md-4">
-                            <div>
-                                <input name="city" type="text" placeholder="Điền tỉnh/thành phố">
-                            </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">Số phòng *</label>
+							<input class="form-control" name="amount" type="text" placeholder="Điền số phòng cho thuê">
+						</div>
 
-                        <div class="col-md-4">
-                            <div>
-                                <input name="public_places" type="text" placeholder="Điền địa điểm công cộng gần phòng">
-                            </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">Giá phòng *</label>
+							<input class="form-control" name="cost_room" type="text" placeholder="Điền giá phòng">
+						</div>
 
-                        <div class="col-md-4">
-                            <div>
-                                <input name="amount" type="text" placeholder="Điền số phòng cho thuê">
-                            </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">Diện tích *</label>
+							<input class="form-control" name="acreage" type="text" placeholder="Điền diện tích">
+						</div>
 
-                        <div class="col-md-4">
-                            <div>
-                                <input name="cost_room" type="text" placeholder="Điền giá phòng">
-                            </div>
-                        </div>
+					</div>
+					<div class="form-row last">
+						<div class="form-wrapper">
+							<label for="">WC_status *</label>
+							<select name="WC_status" class="form-control">
+								<option value="Chung"selected>Chung</option>
+								<option value="Riêng">Riêng</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
+						<div class="form-wrapper">
+							<label for="">water_hot *</label>
+							<select name="water_hot" id="" class="form-control">
+								<option value="Có"selected>Có</option>
+                                <option value="Không">Không</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
 
-                        <div class="col-md-4">
-                            <div>
-                                <input name="acreage" type="text" placeholder="Điền diện tích">
-                            </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">kitchen *</label>
+							<select name="kitchen" id="" class="form-control">
+								<option value="Không nấu ăn"selected>Không nấu ăn</option>
+								<option value="Bếp riêng">Bếp riêng</option>
+								<option value="Bếp chung">Bếp chung</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
 
-                        <div class="col-md-3">
-                                <div>
-                                    <select name="WC_status">
-                                        <option value="" selected>WC_status</option>
-                                        <option value="Chung">Chung</option>
-                                        <option value="Riêng">Riêng</option>
-                                    </select>
-                                </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">air_conditioner *</label>
+							<select name="air_conditioner" id="" class="form-control">
+								<option value="Có"selected>Có</option>
+                                <option value="Không">Không</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
 
-                        <div class="col-md-3">
-                                <div>
-                                    <select name="water_hot">
-                                        <option value="" selected>water_hot</option>
-                                        <option value="Có">Có</option>
-                                        <option value="Không">Không</option>
-                                    </select>
-                                </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">balcony *</label>
+							<select name="balcony" id="" class="form-control">
+								<option value="Có"selected>Có</option>
+                                <option value="Không">Không</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
+					</div>
 
-                        <div class="col-md-3">
-                                <div>
-                                    <select name="kitchen">
-                                        <option value="" selected>kitchen</option>
-                                        <option value="Không nấu ăn">Không nấu ăn</option>
-                                        <option value="Bếp riêng">Bếp riêng</option>
-                                        <option value="Bếp chung">Bếp chung</option>
-                                    </select>
-                                </div>
-                        </div>
+					<div class="form-row last">
+						<div class="form-wrapper">
+							<label for="">electricity_water_status *</label>
+							<select name="electricity_water_status" id="" class="form-control">
+								<option value="Giá dân" selected>Giá dân</option>
+                                <option value="Giá thuê">Giá thuê</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
 
-                        <div class="col-md-3">
-                                <div>
-                                    <select name="air_conditioner">
-                                        <option value="" selected>air_conditioner</option>
-                                        <option value="Có">Có</option>
-                                        <option value="Không">Không</option>
-                                    </select>
-                                </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">status *</label>
+							<select name="status" id="" class="form-control">
+								<option value="Chung chủ" selected>Chung chủ</option>
+								<option value="Không chung chủ">Không chung chủ</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
 
-                        <div class="col-md-3">
-                                <div>
-                                    <select name="balcony">
-                                        <option value="" selected>balcony</option>
-                                        <option value="Có">Có</option>
-                                        <option value="Không">Không</option>
-                                    </select>
-                                </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">room_kind *</label>
+							<select name="room_kind" id="" class="form-control">
+								<option value="phòng trọ" selected>Phòng trọ</option>
+								<option value="chung cư mini">Chung cư mini</option>
+								<option value="chung cư nguyên căn">Chung cư nguyên căn</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
+						
+						<div class="form-wrapper">
+							<label for="">cycile *</label>
+							<select name="cycile" id="" class="form-control">
+								<option value= "week" selected>Tuần</option>
+								<option value= "month">Tháng</option>
+								<option value= "quarter">Quý</option>
+								<option value= "year">Nam</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
 
+						<div class="form-wrapper">
+							<label for="">Thời gian *</label>
+							<input class="form-control" name="time_life" type="text" placeholder="Điền số thời gian">
+						</div>
 
-                        <div class="col-md-3">
-                                <div>
-                                    <select name="electricity_water_status">
-                                        <option value="" selected>electricity_water_status</option>
-                                        <option value="Giá dân">Giá dân</option>
-                                        <option value="Giá thuê">Giá thuê</option>
-                        
-                                    </select>
-                                </div>
-                        </div>
+						<div class="form-wrapper">
+							<label for="">Thời gian *</label>
+							<input class="form-control" name="electricity_cost" type="text" placeholder="Điền số tiền điện">
+						</div>
 
-                        <div class="col-md-3">
-                                <div>
-                                    <select name="status">
-                                        <option value="" selected>status</option>
-                                        <option value="Chung chủ">Chung chủ</option>
-                                        <option value="Không chung chủ">Không chung chủ</option>
-                        
-                                    </select>
-                                </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div>
-                                <input name="electricity_cost" type="text" placeholder="Điền số tiền điện">
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div>
-                                <input name="water_cost" type="text" placeholder="Điền số tiền nước">
-                            </div>
-                        </div>
-
-                        <div class="col-md-8">
-                            <div class="col-md-3">
-                                <div>
-                                    <select name="room_kind">
-                                        <option value="" selected>Loại phòng</option>
-                                        <option value="phòng trọ">Phòng trọ</option>
-                                        <option value="chung cư mini">Chung cư mini</option>
-                                        <option value="chung cư nguyên căn">Chung cư nguyên căn</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="aa-properties-single-sidebar">
-                                <h4>Hình thức đăng tin</h4>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div>
-                                    <select name="cycile">
-                                        <option value="" selected>Gói thời gian</option>
-                                        <option value="week">Tuần</option>
-                                        <option value="month">Tháng</option>
-                                        <option value="quarter">Quý</option>
-                                        <option value="year">Nam</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div>
-                                        <input name="time_life" type="text" placeholder="Điền số thời gian">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="formFileMultiple" class="form-label">Ảnh đính kèm</label>
-                                <input class="form-control" type="file" id="formFileMultiple" multiple name="images">
-                            </div>
-
-                            
-                        </div>
-                        <div class="col-md-3">
-                                <div>
-                                    <button type="submit" class="btn btn-primary" value="createRoom">Create</button>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-	</section>
+						<div class="form-wrapper">
+							<label for="">Thời gian *</label>
+							<input class="form-control" name="water_cost" type="text" placeholder="Điền số tiền nước">
+						</div>
+					</div>
+					<div class="form-wrapper">
+						<label for="formFileMultiple" class="form-label">Ảnh đính kèm</label>
+						<input class="form-control" type="file" id="formFileMultiple" multiple name="images">
+					</div>
+					<button type="submit" class="btn btn-primary" value="createRoom" onclick="createRoom()">
+						<span>Create Room</span>
+					</button>
+				</form>
+			</div>
+		</div>
 	<!-- end main content -->
 	<!-- import script -->
 	<script src = "/js/jquery-3.5.1.min.js"></script>
