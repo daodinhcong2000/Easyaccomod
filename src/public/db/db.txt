@@ -1,0 +1,63 @@
+[{
+        "id":"10",
+        "nameAcc":"toan456",
+        "nameUser":"Nguyễn Văn Toàn",
+        "status": "Chưa Kích Hoạt",
+        "date" : "11/10/2020",
+        "landlord_id" : "1",
+        "fullName": "Nguyễn Văn Toàn",
+        "citizen_id": "123456789123",
+        "address": "123 Cầu Giấy",
+        "phone": "1234567988",
+        "email": "a@a.com",
+        "accuracy": "0",
+        "edit_status": "0",
+        "lastUpdate": "12/12/2020"
+},
+{
+         "id":"10",
+        "nameAcc":"toan456",
+        "nameUser":"Nguyễn Văn Toàn",
+        "status": "Chưa Kích Hoạt",
+        "date" : "11/10/2020",
+        "landlord_id" : "2",
+        "fullName": "Nguyễn Văn Toàn",
+        "citizen_id": "123456789123",
+        "address": "123 Cầu Giấy",
+        "phone": "1234567988",
+        "email": "a@a.com",
+        "accuracy": "0",
+        "edit_status": "0",
+        "lastUpdate": "12/12/2020"
+},
+{
+        "nameAcc":"toan456",
+        "nameUser":"Ngô Thanh Tùng",
+        "status": "Đã Kích Hoạt",
+        "date" : "15/10/2020",
+        "landlord_id" : "3",
+        "fullName": "Nguyen Van AB",
+        "citizen_id": "123456789123",
+        "address": "123 Cầu Giấy",
+        "phone": "1234567988",
+        "email": "a@a.com",
+        "accuracy": "0",
+        "edit_status": "0",
+        "lastUpdate": "12/12/2020"
+},
+{
+        "nameAcc":"toan456",
+        "fullName":"Ngô Thanh Tùng",
+        "landlord_id" : "4",
+        "citizen_id": "123456789123",
+        "address": "123 Cầu Giấy",
+        "phone": "1234567988",
+        "email": "a@a.com",
+        "accuracy": "0",
+        "edit_status": "0",
+        "lastUpdate": "12/12/2020"
+}
+]
+
+
+

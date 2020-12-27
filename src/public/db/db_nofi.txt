@@ -1,0 +1,29 @@
+[{  
+    "id" : "1",
+    "nameUser": "toan456",
+    "text" : "Đã có người đã thuê trọ",
+    "date" : "25/01/2020",
+    "view" : "0"
+},
+{  
+    "id" : "2",
+    "nameUser": "trang456",
+    "text" : "Đã đăng bài thuê trọ",
+    "date" : "25/01/2020",
+    "view" : "0"
+}
+,
+{  
+    "id" : "3",
+    "nameUser": "trang456222",
+    "text" : "Đã đăng bài thuê trọ",
+    "date" : "25/01/2020",
+    "view" : "1"
+},
+{  
+    "id" : "4",
+    "nameUser": "trang4563333",
+    "text" : "Đã đăng bài thuê trọ",
+    "date" : "25/01/2020",
+    "view" : "1"
+}]

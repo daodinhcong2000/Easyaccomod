@@ -1,0 +1,216 @@
+{    
+    "Trang chủ + giao diện người thuê trọ": 
+    {
+        "Đăng ký": {
+            "Thường": [
+                "Họ tên",
+                "Số điện thoại",
+                "Email",
+                "Mật khẩu"
+            ],
+            "Liên kết tài khoản": [
+                "google+", "facebook"
+            ]
+        },
+        "Đăng nhập": "",
+        "search": [
+            "Theo tên"
+        ],
+        "filter": {
+            "vi tri": [
+                "thành phố",
+                "quận huyện",
+                "phường"
+            ],
+            "Gần địa học": "??",
+            "giá tiền": "khoảng giá",
+            "giá điện": "Giá 1 số điện",
+            "giá nước": "Giá 1 khối nước",
+            "loai phong": [
+                "phòng trọ",
+                "chung cư mini",
+                "chung cư nguyên căn"
+            ],
+            "Chung chủ": [
+                "Có", "Không"
+            ],
+            "dien tich": "khoảng diện tích",
+            "co so vat chat": [
+                "điều hoà",
+                "nóng lạnh",
+                "ban công",
+                "vệ sinh khép kín",
+                "bếp",
+                "tủ lạnh",
+                "máy giặt",
+                "chỗ để xe máy"
+            ],
+            "giờ giấc": [
+                "tự do", "không tự do"
+            ]
+        },
+        "khu vực nổi bật": {
+            "hanoi": "search+filter theo tỉnh",
+            "danang": "search+filter theo tỉnh",
+            "tphcm": "search+filter theo tỉnh"
+        },
+        "list bài viết cho thuê": {
+            "tên": "loại phòng + vị trí + giờ giấc+...",
+            "ảnh": "1 ảnh",
+            "vote": "tỉ lệ trên 5 ngôi sao",
+            "giá tiền": "giá tiền chính xác",
+            "Số lượng phòng": "Số lượng phòng còn lại",
+            "diện tích": "diện tích chính xác",
+            "vị trí": "quận huyện + thành phố",
+            "sđt": "sđt chủ trọ",
+            "thời gian đăng bài": "thời gian đăng bài",
+            "hạn bài viết": "Hạn bài viết"
+        },
+        "Bài viết chi tiết": {
+            "Thông tin mô tả": {
+                "Địa chỉ chính xác": "Địa chỉ chính xác",
+                "gia tien": "giá tiền chính xác theo đồng",
+                "giá điện": "Giá 1 số điện",
+                "giá nước": "Giá 1 khối nước",
+                "loai phong": [
+                    "phòng trọ",
+                    "chung cư mini",
+                    "chung cư nguyên căn"
+                ],
+                "Chung chủ": [
+                    "Có", "Không"
+                ],
+                "dien tich": "diện tích chính xác theo m2",
+                "Số lượng phòng": "Số lượng phòng còn lại",
+                "Cơ sở vật chất": [
+                    "điều hoà",
+                    "nóng lạnh",
+                    "ban công",
+                    "vệ sinh khép kín",
+                    "bếp",
+                    "tủ lạnh",
+                    "máy giặt",
+                    "chỗ để xe máy"
+                ],
+                "giờ giấc": {
+                    "tự do": "Có/Không", 
+                    "không tự do": "Mấy giờ đóng cửa"
+                },
+                "Đối tượng cho thuê": [
+                    "nam",
+                    "nữ",
+                    "tất cả"
+                ]
+            },
+            "Đoạn mô tả": "Đoạn mô tả của chủ nhà",
+            "Ngày cập nhật": "Ngày đăng/cập nhật bài",
+            "Ngày hết hạn": "Ngày bài đăng hết hạn",
+            "Hình ảnh": "Hình ảnh chủ nhà đăng lên",
+            "Map": "Vị trí trên google map",
+            "Thông tin liên lạc": [
+                "Họ tên",
+                "Số điện thoại"
+            ],
+            "comment": ""
+        }
+        
+    },
+
+
+
+    "Giao diện chủ trọ": 
+    {
+        "_comment": "Trong giao diện trang chủ có 1 button Đăng tin/Chủ trọ để chuyển sang Giao diện Chủ trọ. Giao diện này yêu cầu xác nhận thêm thông tin rồi mới được tới giao diện quản lý",
+        "Xác nhận thêm thông tin chủ trọ": [
+            "Số căn cước",
+            "Địa chỉ thường trú"
+        ],
+        "Giao diện quản lý": {
+            "Quản lý bài đăng": {
+                "thêm bài viết": {
+                    "Địa chỉ": [
+                        "Tỉnh, thành phố",
+                        "Quận, huyện",
+                        "Phường, xã",
+                        "Đường, phố",
+                        "Số nhà"
+                    ],
+                    "Địa chỉ chính xác": "Viết lại địa chỉ chính xác",
+                    "Thông tin mô tả": {
+                        "gan dai hoc": "??",
+                        "gia tien": "giá tiền chính xác theo đồng",
+                        "giá điện": "Giá 1 số điện",
+                        "giá nước": "Giá 1 khối nước",
+                        "loai phong": [
+                            "phòng trọ",
+                            "chung cư mini",
+                            "chung cư nguyên căn"
+                        ],
+                        "Chung chủ": [
+                            "Có", "Không"
+                        ],
+                        "dien tich": "diện tích chính xác theo m2",
+                        "Số lượng phòng": "Số lượng phòng cùng loại cho thuê",
+                        "co so vat chat": [
+                            "điều hoà",
+                            "nóng lạnh",
+                            "ban công",
+                            "vệ sinh khép kín",
+                            "bếp",
+                            "tủ lạnh",
+                            "máy giặt",
+                            "chỗ để xe máy"
+                        ],
+                        "giờ giấc": {
+                            "tự do": "true/false", 
+                            "không tự do": "Mấy giờ đóng cửa"
+                        },
+                        "Đối tượng cho thuê": [
+                            "nam",
+                            "nữ",
+                            "tất cả"
+                        ],
+                        "Hình ảnh": "Tải ảnh lên tối thiểu 3 ảnh",
+                        "Đoạn mô tả": "Đoạn mô tả của chủ nhà"
+                    },
+                    "Thông tin liên lạc": "Họ tên + số điện thoại (tự động nhập, lấy ở thông tin tài khoản đăng kí)",
+                    "Thời gian đăng": [
+                        "Theo tuần",
+                        "Theo tháng",
+                        "Theo năm"
+                    ],
+                    "Phương thức thanh toán": [
+                        "Trừ tiền tài khoản",
+                        "Thẻ ngân hàng",
+                        "Thẻ quốc tế: visa, mastercard,...",
+                        "Momo"
+                    ]
+                    
+                },
+                "sửa bài viết": "Tương tự thêm bài viết",
+                "Gia hạn thời gian đăng": {
+                    "Hạn đăng": "Sửa hạn đăng",
+                    "Phương thức thanh toán": "Tương tự bên trên"
+                },
+                "Cập nhật số phòng": "Thay đổi khi có người thuê/trả phòng",
+                "Thống kê": [
+                    "Lượt xem",
+                    "Lượt thích"
+                ]
+            
+            },
+            "Hòm thư": {
+                "Với người tìm trọ": "",
+                "Với admin công ty": ""
+            },
+            "Quản lý thông tin cá nhân": [
+                "Họ tên",
+                "SĐT",
+                "Mail",
+                "Số căn cước",
+                "Địa chỉ",
+                "Mật khẩu"
+            ]
+        }
+    }
+}

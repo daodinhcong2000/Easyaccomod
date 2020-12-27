@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quản lí phòng trọ</title>
+
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="icon" type="image/png" href="/assets/logo.png"/>
+
+	<!-- Import lib -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+	<link rel="stylesheet" type="text/css" href="/fontawesome-free/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<!-- End import lib -->
+
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body class="overlay-scrollbar">
+	<!-- navbar -->
+	<div class="navbar">
+		<!-- nav left -->
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link">
+					<i class="fas fa-bars" onclick="collapseSidebar()"></i>
+				</a>
+			</li>
+			<li class="nav-item">
+				<img src="/assets/logo.png" alt=" logo" class="logo logo-light">
+				<img src="/assets/logo.png" alt=" logo" class="logo logo-dark">
+			</li>
+
+			<li class="nav-item">
+				<h3>Đại học Công Nghệ</h3>
+			</li>
+		</ul>
+		<!-- end nav left -->
+		<!-- form -->
+		<form class="navbar-search">
+			<input type="text" name="Search" class="navbar-search-input" placeholder="What you looking for...">
+			<i class="fas fa-search"></i>
+		</form>
+		<!-- end form -->
+		<!-- nav right -->
+		<ul class="navbar-nav nav-right">
+			<li class="nav-item mode">
+				<a class="nav-link" href="#" onclick="switchTheme()">
+					<i class="fas fa-moon dark-icon"></i>
+					<i class="fas fa-sun light-icon"></i>
+				</a>
+			</li>
+			<li class="nav-item dropdown" >
+				<a class="nav-link">
+					<i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>
+					<span class="navbar-badge">15</span>
+				</a>
+				<ul id="notification-menu" class="dropdown-menu notification-menu">
+					<div class="dropdown-menu-header">
+						<span>
+							Thông báo
+						</span>
+					</div>
+					<div class="dropdown-menu-content overlay-scrollbar scrollbar-hover">
+						<li class="dropdown-menu-item" >
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="far fa-dot-circle"></i>
+									<br>
+									<p>trang123</p>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+					</div>
+					<div class="dropdown-menu-footer">
+						<span>
+							xem tất cả thông báo
+						</span>
+					</div>
+				</ul>
+			</li>
+			<li class="nav-item avt-wrapper">
+				<div class="avt dropdown">
+					<img src="/assets/trump.jpg" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
+					<ul id="user-menu" class="dropdown-menu">
+						<li  class="dropdown-menu-item">
+							<a class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-user-tie"></i>
+								</div>
+								<span>Profile</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-cog"></i>
+								</div>
+								<span>Settings</span>
+							</a>
+						</li>
+						<li  class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="far fa-credit-card"></i>
+								</div>
+								<span>Payments</span>
+							</a>
+						</li>
+						<li  class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-spinner"></i>
+								</div>
+								<span>Projects</span>
+							</a>
+						</li>
+						<li  class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-sign-out-alt"></i>
+								</div>
+								<span>Logout</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<!-- end nav right -->
+	</div>
+	<!-- end navbar -->
+	<!-- sidebar -->
+	<div class="sidebar">
+		<ul class="sidebar-nav">
+			<li class="sidebar-nav-item">
+				<a href="http://localhost:3001/admin" class="sidebar-nav-link">
+					<div>
+						<i class="fas fa-tachometer-alt"></i>
+					</div>
+					<span>
+						Dashboard
+					</span>
+				</a>
+			</li>
+			<li class="sidebar-nav-item">
+				<a href="Chart.hbs" class="sidebar-nav-link">
+					<div>
+						<i class="fab fa-accusoft"></i>
+					</div>
+					<span>Biểu đồ</span>
+				</a>
+			</li>
+			<li  class="sidebar-nav-item">
+				<a href="http://localhost:3001/admin/manageLandlord" class="sidebar-nav-link active">
+					<div>
+						<i class="fas fa-tasks"></i>
+					</div>
+					<span>Quản lý chủ trọ</span>
+				</a>
+			</li>
+			<li  class="sidebar-nav-item">
+				<a href="http://localhost:3001/admin/manageRoom" class="sidebar-nav-link ">
+					<div>
+						<i class="fas fa-spinner"></i>
+					</div>
+					<span>Quản lý bài đăng</span>
+				</a>
+			</li>
+			<li  class="sidebar-nav-item">
+				<a href="http://localhost:3001/admin/manageExtend" class="sidebar-nav-link">
+					<div>
+						<i class="fas fa-check-circle"></i>
+					</div>
+					<span>Gia hạn bài đăng</span>
+				</a>
+			</li>
+			
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<!-- main content -->
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-8 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3>
+							Danh sách tài khoản đang chờ kích hoạt
+						</h3>
+						<i class="fas fa-ellipsis-h"></i>
+					</div>
+
+					<div class="card-content">
+						<table>
+							<thead>
+									<tr>
+									<th>Số</th>
+									<th>Tên tài khoản</th>
+									<th>Tên người đăng kí</th>
+									<th>Trạng thái</th>
+									<th>Ngày Đăng Kí</th>
+									<th>Kích hoạt</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>6</td>
+									<td>React</td>
+									<td>Tran Anh Tuat</td>
+									<td>
+										<span class="dot">
+											<i class="bg-warning"></i>
+											Chưa Kích Hoạt
+										</span>
+									</td>
+									<td>17/07/2020</td>
+									<td>
+										<button class="acept" onclick="changeStatus(this)">Chấp nhận</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-primary numberOfAcc">
+					<p>
+						<i class="fas fa-user-circle"></i>
+					</p>
+					<h3>Số lượng tài khoản đã đăng kí</h3>
+					<p>100+</p>
+				</div>
+			</div>
+
+			<div class="col-11 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3>
+							Danh sách tài khoản đã được kích hoạt
+						</h3>
+						<i class="fas fa-ellipsis-h"></i>
+					</div>
+
+					<div class="card-content-acept">
+						<table>
+							<thead>
+									<tr>
+									<th>Số</th>
+									<th>Tên tài khoản</th>
+									<th>Tên người đăng kí</th>
+									<th>Trạng thái</th>
+									<th>Ngày kích hoạt</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>6</td>
+									<td>React</td>
+									<td>Tran Anh Tuat</td>
+									<td>
+										<span class="dot">
+											<i class="bg-success"></i>
+											Đã kích hoạt
+										</span>
+									</td>
+									<td>17/07/2020</td>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		
+	</div>
+	<!-- end main content -->
+	<!-- import script -->
+	<script src = "/js/jquery-3.5.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+	<script src="/js/index.js"></script>
+	<script src = "/js/manage_acc.js"></script>
+	<!-- end import script -->
+</body>
+</html>
