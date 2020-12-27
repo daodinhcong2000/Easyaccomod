@@ -61,25 +61,11 @@
 					</div>
 					<div class="dropdown-menu-content overlay-scrollbar scrollbar-hover">
 						<li class="dropdown-menu-item" >
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="far fa-dot-circle"></i>
-									<br>
-									<p>trang123</p>
-								</div>
-								<span>
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-									<br>
-									<span>
-										15/07/2020
-									</span>
-								</span>
-							</a>
 						</li>
 					</div>
 					<div class="dropdown-menu-footer">
-						<span>
-							xem tất cả thông báo
+						<span onclick="viewAllNoties()" >
+							Xác nhận xem tất cả
 						</span>
 					</div>
 				</ul>
@@ -88,38 +74,6 @@
 				<div class="avt dropdown">
 					<img src="/assets/trump.jpg" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
 					<ul id="user-menu" class="dropdown-menu">
-						<li  class="dropdown-menu-item">
-							<a class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-user-tie"></i>
-								</div>
-								<span>Profile</span>
-							</a>
-						</li>
-						<li class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-cog"></i>
-								</div>
-								<span>Settings</span>
-							</a>
-						</li>
-						<li  class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="far fa-credit-card"></i>
-								</div>
-								<span>Payments</span>
-							</a>
-						</li>
-						<li  class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-spinner"></i>
-								</div>
-								<span>Projects</span>
-							</a>
-						</li>
 						<li  class="dropdown-menu-item">
 							<a href="#" class="dropdown-menu-link">
 								<div>
@@ -149,7 +103,7 @@
 				</a>
 			</li>
 			<li class="sidebar-nav-item">
-				<a href="Chart.hbs" class="sidebar-nav-link">
+				<a href="http://localhost:3001/admin/manageChart" class="sidebar-nav-link">
 					<div>
 						<i class="fab fa-accusoft"></i>
 					</div>
@@ -209,21 +163,6 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>6</td>
-									<td>React</td>
-									<td>Tran Anh Tuat</td>
-									<td>
-										<span class="dot">
-											<i class="bg-warning"></i>
-											Chưa Kích Hoạt
-										</span>
-									</td>
-									<td>17/07/2020</td>
-									<td>
-										<button class="acept" onclick="changeStatus(this)">Chấp nhận</button>
-									</td>
-								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -236,7 +175,7 @@
 						<i class="fas fa-user-circle"></i>
 					</p>
 					<h3>Số lượng tài khoản đã đăng kí</h3>
-					<p>100+</p>
+					<p></p>
 				</div>
 			</div>
 
@@ -253,7 +192,7 @@
 						<table>
 							<thead>
 									<tr>
-									<th>Số</th>
+									<th>Số định danh</th>
 									<th>Tên tài khoản</th>
 									<th>Tên người đăng kí</th>
 									<th>Trạng thái</th>
@@ -261,17 +200,6 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>6</td>
-									<td>React</td>
-									<td>Tran Anh Tuat</td>
-									<td>
-										<span class="dot">
-											<i class="bg-success"></i>
-											Đã kích hoạt
-										</span>
-									</td>
-									<td>17/07/2020</td>
 							</tbody>
 						</table>
 					</div>

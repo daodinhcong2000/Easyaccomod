@@ -76,12 +76,11 @@ function  viewNumber(getData){
 		})
 		.then(response => response.json())
 		.then(dataPost => {
-			
 			if(dataPost.length == 0){
-				$(".counter #loadTimeCreatPost").html(`<p>Không có bài viết nào trong tháng</p>`);
+				$(".counter #loadNumber").html(`<p>Không có bài viết nào trong tháng</p>`);
 			}
 			else{
-			$(".counter #loadTimeCreatPost").html(`<p>${dataPost[0].room_name}</p>`)
+				$(".counter #loadNumber").html(`<p>${dataPost[0].room_name}</p>`)
 			};
 		console.log('Success:',dataPost );
 		})
@@ -106,10 +105,10 @@ function  viewLike(getData){
 		.then(dataPost => {
 			console.log(dataPost.length);
 			if(dataPost.length == 0){
-				$(".counter #loadTimeCreatPost").html(`<p>Không có bài viết nào trong tháng</p>`);
+				$(".counter #loadLike").html(`<p>Không có bài viết nào trong tháng</p>`);
 			}
 			else{
-			$(".counter #loadTimeCreatPost").html(`<p>${dataPost[0].room_name}</p>`)
+				$(".counter #loadLike").html(`<p>${dataPost[0].room_name}</p>`)
 			};
 		console.log('Success:', dataPost);
 		})
@@ -133,10 +132,10 @@ function  viewTimeCreatPost(getData){
 		.then(response => response.json())
 		.then(dataPost => {
 			if(dataPost.length == 0){
-				$(".counter #loadTimeCreatPost").html(`<p>Không có bài viết nào trong tháng</p>`);
+				$(".counter #loadTimeCreatPost").html(`<p>không có lượt xem nào trong tháng</p>`);
 			}
 			else{
-			$(".counter #loadTimeCreatPost").html(`<p>${dataPost[0].room_name}</p>`)
+			$(".counter #loadTimeCreatPost").html(`<p>${dataPost[0].creatDate}</p>`)
 			};
 		console.log('Success:', dataPost);
 		})
@@ -163,10 +162,10 @@ function  viewTextSearch(getData){
 		.then(response => response.json())
 		.then(dataPost => {
 			if(dataPost.length == 0){
-				$(".counter #loadTimeCreatPost").html(`<p>Không có bài viết nào trong tháng</p>`);
+				$(".counter #loadTextSearch").html(`<p>Tháng này người thuê không có nhu cầu</p>`);
 			}
 			else{
-			$(".counter #loadTimeCreatPost").html(`<p>${dataPost[0].room_name}</p>`)
+			$(".counter #loadTextSearch").html(`<p>${dataPost[0].search_value}</p>`)
 			};
 		console.log('Success:', dataPost);
 		})
@@ -188,7 +187,12 @@ function  viewCost(getData){
 		})
 		.then(response => response.json())
 		.then(dataPost => {
-			$(".counter #loadCost").html(`<p>${dataPost[0].room_name}</p>`);
+			if(dataPost.length == 0){
+				$(".counter #loadCost").html(`<p>Không ai thuê trong tháng</p>`);
+			}
+			else{
+			$(".counter #loadCost").html(`<p>${dataPost[0].cost_room}</p>`)
+			};
 		console.log('Success:', dataPost);
 		})
 		.catch((error) => {
@@ -210,10 +214,10 @@ function viewTime(getData){
 		.then(response => response.json())
 		.then(dataPost => {
 			if(dataPost.length == 0){
-				$(".counter #loadTimeCreatPost").html(`<p>Không có bài viết nào trong tháng</p>`);
+				$(".counter #loadTime").html(`<p>Không ai tìm kiếm trong tháng</p>`);
 			}
 			else{
-				$(".counter #loadTimeCreatPost").html(`<p>${dataPost[0].room_name}</p>`)
+				$(".counter #loadTime").html(`<p>${dataPost[0].search_date}</p>`)
 			};
 		console.log('Success:', dataPost);
 		})

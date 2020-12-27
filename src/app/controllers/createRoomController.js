@@ -46,7 +46,7 @@ module.exports.createRoom = async function(req , res )
     var public_places
     if (!req.body.public_places){public_places = ''}
     else public_places = req.body.public_places;
-    sql = "INSERT INTO room (address, house_number , street , town , district, city, public_places, room_kind , amount , cycile , cost_room, acreage, WC_status, water_hot, kitchen, air_conditioner, balcony, electricity_water_status, electricity_cost, water_cost, status, image, landlord_id, time_life , cost_service ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+    sql = "INSERT INTO room (address, house_number , street , town , district, city, public_places, room_kind , amount , cycile , cost_room, acreage, WC_status, water_hot, kitchen, air_conditioner, balcony, electricity_water_status, electricity_cost, water_cost, status, image, landlord_id, time_life , cost_service , creatDate ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,? , CURRENT_DATE())"
     //console.log(req.body)
     await query(conn, sql , [req.body.address, house_number, req.body.street, req.body.town , req.body.district,  req.body.city, public_places , req.body.room_kind , req.body.amount, req.body.cycile, req.body.cost_room , req.body.acreage, req.body.WC_status, req.body.water_hot, req.body.kitchen, req.body.air_conditioner, req.body.balcony, req.body.electricity_water_status, req.body.electricity_cost, req.body.water_cost, req.body.status, image, res.locals.landlord_id, req.body.time_life , cost_service ]);
     //req.files[i].path.split('\\').slice(2).join('/')

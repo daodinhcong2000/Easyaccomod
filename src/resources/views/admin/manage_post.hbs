@@ -59,7 +59,7 @@
 			<li class="nav-item dropdown">
 				<a class="nav-link">
 					<i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>
-					<span class="navbar-badge">15</span>
+					<span class="navbar-badge"></span>
 				</a>
 				<ul id="notification-menu" class="dropdown-menu notification-menu">
 					<div class="dropdown-menu-header">
@@ -70,8 +70,8 @@
 					<div class="dropdown-menu-content overlay-scrollbar scrollbar-hover">
 					</div>
 					<div class="dropdown-menu-footer">
-						<span>
-							Xem tất cả thông báo
+						<span onclick="viewAllNoties()" >
+							Xác nhận xem tất cả
 						</span>
 					</div>
 				</ul>
@@ -80,38 +80,6 @@
 				<div class="avt dropdown">
 					<img src="/assets/trump.jpg" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
 					<ul id="user-menu" class="dropdown-menu">
-						<li  class="dropdown-menu-item">
-							<a class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-user-tie"></i>
-								</div>
-								<span>Profile</span>
-							</a>
-						</li>
-						<li class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-cog"></i>
-								</div>
-								<span>Settings</span>
-							</a>
-						</li>
-						<li  class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="far fa-credit-card"></i>
-								</div>
-								<span>Payments</span>
-							</a>
-						</li>
-						<li  class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-spinner"></i>
-								</div>
-								<span>Projects</span>
-							</a>
-						</li>
 						<li  class="dropdown-menu-item">
 							<a href="#" class="dropdown-menu-link">
 								<div>
@@ -191,7 +159,7 @@
 						<table>
 							<thead>
 								<tr>
-									<th>Số thứ tự</th>
+									<th>Số định danh</th>
 									<th>Tên phòng trọ</th>
 									<th>Người tạo</th>
 									<th>Thời gian tạo</th>
@@ -201,24 +169,23 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td>1</td>
-									<td>React</td>
-									<td>Tran Anh Tuat</td>
-									<td>17/07/2020</td>
-									<td>Hoàn Thành</td>
+                                  <td >`+ data[i].room_id +`</td>
+                                  <td>`+ data[i].roomName +`</td>
+                                  <td>`+ data[i].fullName +`</td>
+                                  <td>`+ data[i].create_date +`</td>
+								  <td>Chưa duyệt</td>
 									<td>
-										<button type="button" onclick="isConfirm(this)" value="4">Có</button>
-										<button type="button" onclick="isNotConfirm(this)" value="3">Không</button>
+										<button type="button"  value = "`+ data[i].room_id +`" onclick="isConfirm(this)">Có</button>
+										<button type="button"  value = "`+ data[i].room_id +`" onclick="isNotConfirm(this)">Không</button>
 									</td>
-								</tr>
-								
+                          		</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
-
+		
 		<div class="row">
 			<div class="col-12 col-m-12 col-sm-12">
 				<div class="card">
@@ -232,7 +199,7 @@
 						<table>
 							<thead>
 								<tr>
-									<th>Số thứ tự</th>
+									<th>Số định danh</th>
 									<th>Tên phòng trọ</th>
 									<th>Người tạo</th>
 									<th>Thời gian tạo</th>
@@ -247,12 +214,17 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<button onclick="inputData()">Thêm bài viết</button>
+		</div>
+		
 	</div>
-
-	<div class="wrapper">
+		
+	<div class="wrapper input">
 			<div class="inner">
+				<h2 style="text-align: center;">Tao một bài đăng</h2>
 				<form form action="/admin/createRoom/store" method="POST" name="createRoom"enctype="multipart/form-data" >
-					<h3>Create a Room</h3>
+					</br>
 					<div class="form-row">
 						<div class="form-wrapper">
 							<label for="">Địa Chỉ *</label>
@@ -307,7 +279,7 @@
 					</div>
 					<div class="form-row last">
 						<div class="form-wrapper">
-							<label for="">WC_status *</label>
+							<label for="">Nhà vệ sinh *</label>
 							<select name="WC_status" class="form-control">
 								<option value="Chung"selected>Chung</option>
 								<option value="Riêng">Riêng</option>
@@ -315,7 +287,7 @@
 							<i class="zmdi zmdi-chevron-down"></i>
 						</div>
 						<div class="form-wrapper">
-							<label for="">water_hot *</label>
+							<label for="">Nóng lạnh *</label>
 							<select name="water_hot" id="" class="form-control">
 								<option value="Có"selected>Có</option>
                                 <option value="Không">Không</option>
@@ -324,7 +296,7 @@
 						</div>
 
 						<div class="form-wrapper">
-							<label for="">kitchen *</label>
+							<label for="">Bếp *</label>
 							<select name="kitchen" id="" class="form-control">
 								<option value="Không nấu ăn"selected>Không nấu ăn</option>
 								<option value="Bếp riêng">Bếp riêng</option>
@@ -334,7 +306,7 @@
 						</div>
 
 						<div class="form-wrapper">
-							<label for="">air_conditioner *</label>
+							<label for="">Điều hòa *</label>
 							<select name="air_conditioner" id="" class="form-control">
 								<option value="Có"selected>Có</option>
                                 <option value="Không">Không</option>
@@ -343,7 +315,7 @@
 						</div>
 
 						<div class="form-wrapper">
-							<label for="">balcony *</label>
+							<label for="">Ban công *</label>
 							<select name="balcony" id="" class="form-control">
 								<option value="Có"selected>Có</option>
                                 <option value="Không">Không</option>
@@ -354,7 +326,7 @@
 
 					<div class="form-row last">
 						<div class="form-wrapper">
-							<label for="">electricity_water_status *</label>
+							<label for="">Giá điện *</label>
 							<select name="electricity_water_status" id="" class="form-control">
 								<option value="Giá dân" selected>Giá dân</option>
                                 <option value="Giá thuê">Giá thuê</option>
@@ -363,7 +335,7 @@
 						</div>
 
 						<div class="form-wrapper">
-							<label for="">status *</label>
+							<label for="">Trạng thái *</label>
 							<select name="status" id="" class="form-control">
 								<option value="Chung chủ" selected>Chung chủ</option>
 								<option value="Không chung chủ">Không chung chủ</option>
@@ -372,7 +344,7 @@
 						</div>
 
 						<div class="form-wrapper">
-							<label for="">room_kind *</label>
+							<label for="">Loại phòng *</label>
 							<select name="room_kind" id="" class="form-control">
 								<option value="phòng trọ" selected>Phòng trọ</option>
 								<option value="chung cư mini">Chung cư mini</option>
@@ -382,7 +354,7 @@
 						</div>
 						
 						<div class="form-wrapper">
-							<label for="">cycile *</label>
+							<label for="">Chu kì *</label>
 							<select name="cycile" id="" class="form-control">
 								<option value= "week" selected>Tuần</option>
 								<option value= "month">Tháng</option>
@@ -393,17 +365,17 @@
 						</div>
 
 						<div class="form-wrapper">
-							<label for="">Thời gian *</label>
+							<label for="">Số chu kì *</label>
 							<input class="form-control" name="time_life" type="text" placeholder="Điền số thời gian">
 						</div>
 
 						<div class="form-wrapper">
-							<label for="">Thời gian *</label>
+							<label for="">Tiền điện *</label>
 							<input class="form-control" name="electricity_cost" type="text" placeholder="Điền số tiền điện">
 						</div>
 
 						<div class="form-wrapper">
-							<label for="">Thời gian *</label>
+							<label for="">Tiền nước *</label>
 							<input class="form-control" name="water_cost" type="text" placeholder="Điền số tiền nước">
 						</div>
 					</div>
@@ -411,10 +383,12 @@
 						<label for="formFileMultiple" class="form-label">Ảnh đính kèm</label>
 						<input class="form-control" type="file" id="formFileMultiple" multiple name="images">
 					</div>
-					<button type="submit" class="btn btn-primary" value="createRoom" onclick="createRoom()">
-						<span>Create Room</span>
-					</button>
+					<div>
+						<button type="submit" class="btn btn-primary" value="createRoom" onclick="createRoom()">Tạo phòng</button>
+						
+					</div>
 				</form>
+				<button class="btn btn-primary" value="createRoom" onclick="cancle()">Hủy</button>
 			</div>
 		</div>
 	<!-- end main content -->

@@ -93,7 +93,7 @@ module.exports.extendRoom = async function(req , res){
     sql = "SELECT cost FROM cost_service WHERE cycile = ?"
     resualts = await query(conn, sql , req.body.cycile);
     var cost_service = parseInt(req.body.time_life)*parseInt(resualts[0].cost);
-    sql = "INSERT INTO extend (landlord_id , room_id , cycile, time_life , cost_service ) VALUES (?,?,?,?,?)"
+    sql = "INSERT INTO extend (landlord_id , room_id , cycile, time_life , cost_service , create_date  ) VALUES (?,?,?,?,? , CURRENT_DATE())"
     await query(conn, sql , [res.locals.landlord_id , req.body.room_id, req.body.cycile , req.body.time_life , cost_service  ]);
     conn.end();
     res.send({

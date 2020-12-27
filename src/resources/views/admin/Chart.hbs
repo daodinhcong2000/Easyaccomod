@@ -51,7 +51,7 @@
 			<li class="nav-item dropdown">
 				<a class="nav-link">
 					<i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>
-					<span class="navbar-badge">15</span>
+					<span class="navbar-badge"></span>
 				</a>
 				<ul id="notification-menu" class="dropdown-menu notification-menu">
 					<div class="dropdown-menu-header">
@@ -63,8 +63,8 @@
 						
 					</div>
 					<div class="dropdown-menu-footer">
-						<span>
-							Xem tất cả thông báo
+						<span onclick="viewAllNoties()" >
+							Xác nhận xem tất cả
 						</span>
 					</div>
 				</ul>
@@ -73,38 +73,6 @@
 				<div class="avt dropdown">
 					<img src="/assets/trump.jpg" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
 					<ul id="user-menu" class="dropdown-menu">
-						<li  class="dropdown-menu-item">
-							<a class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-user-tie"></i>
-								</div>
-								<span>Profile</span>
-							</a>
-						</li>
-						<li class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-cog"></i>
-								</div>
-								<span>Settings</span>
-							</a>
-						</li>
-						<li  class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="far fa-credit-card"></i>
-								</div>
-								<span>Payments</span>
-							</a>
-						</li>
-						<li  class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-spinner"></i>
-								</div>
-								<span>Projects</span>
-							</a>
-						</li>
 						<li  class="dropdown-menu-item">
 							<a href="#" class="dropdown-menu-link">
 								<div>
@@ -185,6 +153,7 @@
 				</div>
 			</div>
 		</div>
+		<h1 style="text-align: center;">Thống kê số lượng nhiều nhất theo tháng </h1>
 		<div class="row">
 			<div class="col-3 col-m-6 col-sm-6">
 				<div class="counter bg-primary">
@@ -192,7 +161,7 @@
 						<i class="fas fa-newspaper"></i>
 					</p>
 					<h3>Bài đăng được xem nhiều nhất</h3>
-					<p id = "loadTimeCreatPost">Vui lòng nhấn nút để xem</p>
+					<p id = "loadNumber">Vui lòng nhấn nút để xem</p>
 					<select id="month">
 						<option value="1">Tháng 1</option>
 						<option value="2">Tháng 2</option>
@@ -237,7 +206,7 @@
 			<div class="col-3 col-m-6 col-sm-6">
 				<div class="counter bg-success">
 					<p>
-						<i class="fas fa-calendar-times"></i>
+						<i class="fas fa-calendar-day"></i>
 					</p>
 					<h3>Thời gian có số lượng bài viết </h3> 
 					<p id = "loadTimeCreatPost">Vui lòng nhấn nút để xem</p>
@@ -259,9 +228,9 @@
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-success">
+				<div class="counter bg-danger">
 					<p>
-						<i class="fas fa-calendar-times"></i>
+						<i class="fas fa-map-marked-alt"></i>
 					</p>
 					<h3>Địa điểm có nhu cầu thuê</h3>
 					<p id = "loadTextSearch">Vui lòng nhấn nút để xem</p>
@@ -286,9 +255,9 @@
 		</div>
 			<div class="row">
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-primary">
+				<div class="counter bg-money">
 					<p>
-						<i class="fas fa-newspaper"></i>
+						<i class="fas fa-money-bill"></i>
 					</p>
 					<h3>Mức giá phòng user tìm kiếm </h3>
 					<p id = "loadCost">Vui lòng nhấn nút để xem</p>
@@ -310,9 +279,9 @@
 				</div>
 			</div>
 			<div class="col-3 col-m-6 col-sm-6">
-				<div class="counter bg-warning">
+				<div class="counter bg-time">
 					<p>
-						<i class="fas fa-spinner"></i>
+						<i class="fas fa-stopwatch"></i>
 					</p>
 					<h3>Khoảng thời gian tìm kiếm</h3>
 					<p id = "loadTime">Vui lòng nhấn nút để xem</p>

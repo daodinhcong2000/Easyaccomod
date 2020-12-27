@@ -63,8 +63,8 @@
 						
 					</div>
 					<div class="dropdown-menu-footer">
-						<span>
-							Xem tất cả thông báo
+						<span onclick="viewAllNoties()" >
+							Xác nhận xem tất cả
 						</span>
 					</div>
 				</ul>
@@ -74,39 +74,7 @@
 					<img src="/assets/trump.jpg" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
 					<ul id="user-menu" class="dropdown-menu">
 						<li  class="dropdown-menu-item">
-							<a class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-user-tie"></i>
-								</div>
-								<span>Profile</span>
-							</a>
-						</li>
-						<li class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-cog"></i>
-								</div>
-								<span>Settings</span>
-							</a>
-						</li>
-						<li  class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="far fa-credit-card"></i>
-								</div>
-								<span>Payments</span>
-							</a>
-						</li>
-						<li  class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
-								<div>
-									<i class="fas fa-spinner"></i>
-								</div>
-								<span>Projects</span>
-							</a>
-						</li>
-						<li  class="dropdown-menu-item">
-							<a href="#" class="dropdown-menu-link">
+							<a href="" class="dropdown-menu-link">
 								<div>
 									<i class="fas fa-sign-out-alt"></i>
 								</div>
@@ -194,7 +162,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
+								{{!-- <tr>
 									<td>1</td>
 									<td>React</td>
 									<td>Tran Anh Tuat</td>
@@ -205,7 +173,7 @@
 										<button type="button" onclick="isMoreTime(this)" value="1">Có</button>
 										<button type="button" onclick="isNotMoreTime(this)" value="1" >Không</button>
 									</td>
-								</tr>
+								</tr> --}}
 								
 							</tbody>
 						</table>

@@ -41,8 +41,7 @@ function showPost(){
 showPost();
 
 function isConfirm(ok){
-  //ok.parentNode.parentNode.remove();
-    //console.log(ok.value);
+    
   const data = { 
     room_id : ok.value,
   };
@@ -57,6 +56,11 @@ function isConfirm(ok){
       })
       .then(response => response.json())
       .then(data => {
+        if(data.Err == "Bài viết này đã được duyệt"){
+           ok.parentNode.parentNode.remove();
+
+        }
+        
         console.log('Success:', data);
       })
       .catch((error) => {
@@ -88,23 +92,39 @@ function isNotConfirm(ok){
     
 }
 
-function createRoom(){
+function inputData(){
+    document.querySelector(".content").style.display = 'none';
+    document.querySelector(".input").style.display = 'block';
+    
 
-  var address = document.querySelector('input[name=address]').value;
-  var house_number = document.querySelector('input[name=house_number]').value;
-  var street = document.querySelector('input[name=street]').value;
-  var town = document.querySelector('input[name=town]').value;
-  var city = document.querySelector('input[name=city]').value;
-  var public_places = document.querySelector('input[name=public_places]').value;
-  var amount = document.querySelector('input[name=amount]').value;
-  var cost_room = document.querySelector('input[name=cost_room]').value;
-  var acreage = document.querySelector('input[name=acreage]').value;
-  var address = document.querySelector('input[name=address]').value;
-  var address = document.querySelector('input[name=address]').value;
-  var address = document.querySelector('input[name=address]').value;
-  var address = document.querySelector('input[name=address]').value;
-  var address = document.querySelector('input[name=address]').value;
-  var address = document.querySelector('input[name=address]').value;
-  var address = document.querySelector('input[name=address]').value;
-  var address = document.querySelector('input[name=address]').value;
 }
+
+function cancle(){
+    document.querySelector(".content").style.display = 'block';
+    document.querySelector(".input").style.display = 'none';
+}
+// window.onclick = function(event) {
+//   document.querySelector(".content").style.display = 'block';
+//   document.querySelector(".input").style.display = 'none';
+// }
+
+// function createRoom(){
+
+//   var address = document.querySelector('input[name=address]').value;
+//   var house_number = document.querySelector('input[name=house_number]').value;
+//   var street = document.querySelector('input[name=street]').value;
+//   var town = document.querySelector('input[name=town]').value;
+//   var city = document.querySelector('input[name=city]').value;
+//   var public_places = document.querySelector('input[name=public_places]').value;
+//   var amount = document.querySelector('input[name=amount]').value;
+//   var cost_room = document.querySelector('input[name=cost_room]').value;
+//   var acreage = document.querySelector('input[name=acreage]').value;
+//   var address = document.querySelector('input[name=address]').value;
+//   var address = document.querySelector('input[name=address]').value;
+//   var address = document.querySelector('input[name=address]').value;
+//   var address = document.querySelector('input[name=address]').value;
+//   var address = document.querySelector('input[name=address]').value;
+//   var address = document.querySelector('input[name=address]').value;
+//   var address = document.querySelector('input[name=address]').value;
+//   var address = document.querySelector('input[name=address]').value;
+// }

@@ -106,7 +106,7 @@ function showNotifies(){
 			var i = 0;
 			var countNofi = data;
 			for(i in data){
-				var status = `Đã cho thuê :` + $(data[i].fill) +'/' + $(data[i].amount)
+				var status = `Đã cho thuê : ${data[i].fill}/${data[i].amount} `
 				if(data[i].fill == 0) {
 					status = `Chưa cho thuê :`
 				}

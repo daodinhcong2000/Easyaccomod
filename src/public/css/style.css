@@ -3,6 +3,8 @@
 	--success-color: #6ab04c;
 	--warning-color: #f0932b;
 	--danger-color: #eb4d4b;
+	--money-color: #1d6029;
+	--time-color: #581d60;
 
 	--light-color: #212529;
 	--light-second-color: #727475;
@@ -40,6 +42,9 @@
 .bg-primary {
   background: var(--primary-color);
 }
+.bg-time {
+	background: var(--time-color);
+}
 
 .bg-success {
   background: var(--success-color);
@@ -47,6 +52,9 @@
 
 .bg-warning {
   background: var(--warning-color);
+}
+.bg-money {
+	background: var(--money-color);
 }
 
 .bg-danger {
@@ -294,6 +302,9 @@ body {
 	transition: margin-left .5s;
 }
 
+.input{
+	display: none;
+}
 .sidebar {
 	width: 82px;
 	height: 100vh;
@@ -517,6 +528,7 @@ body {
 }
 
 .card-header h3 {
+	text-align: center;
 	margin: 0;
 }
 
