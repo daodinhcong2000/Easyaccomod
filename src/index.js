@@ -23,7 +23,7 @@ app.use(
 
 /// AJAX, fetch, XMLHttpRequest
 //app.use(express.json());
-app.use(cookie_parser('luongvietanh'))
+app.use(cookie_parser('ddcong'))
 app.use(bodyParser.json())
 //app.use(bodyParser.urlencoded({ extended: false }))
 // templace
